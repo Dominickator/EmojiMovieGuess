@@ -1,12 +1,10 @@
 import "./App.css";
 import React, {useEffect, useState} from "react";
-import ConfettiExplosion, {ConfettiProps} from 'react-confetti-explosion';
 
 function App() {
 
   const [guess, setGuess] = useState("");
   let [randVar, setRandVar] = useState(0);
-  const [isExploding, setIsExploding] = useState(false);
 
   useEffect(() => {
     setRandVar(Math.floor(Math.random() * 10));
@@ -36,7 +34,7 @@ function App() {
         return (<h3>🚲🌌👽👦🏻🌟</h3>);
         break;
       case 7:
-        return (<h3>🕰️👦🏻🦖👨‍🦳🏎️</h3>);
+        return (<h3>👨‍🦱🚗⏭️🕰️🔥</h3>);
         break;
       case 8:
         return (<h3>🕶️💊🔫💻🌐</h3>);
@@ -50,18 +48,112 @@ function App() {
   const checkGuess = () => {
     if(randVar === 0){
       if(guess.toLowerCase() === "back to the future"){
-        return (isExploding && <ConfettiExplosion force={0.8} duration={3000} particleCount={250} width={1600}/>);
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
       }
       else{
         alert("Incorrect guess! Try again!");
       }
     }
+    else if(randVar === 1){
+      if(guess.toLowerCase() === "titanic"){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    else if(randVar === 2){
+      if(guess.toLowerCase() === "the godfather"){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    else if(randVar === 3){
+      if(guess.toLowerCase() === "forrest gump"){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    else if(randVar === 4){
+      if(guess.toLowerCase() === "the lion king"){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    else if(randVar === 5){
+      if(guess.toLowerCase() === "jaws"){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    else if(randVar === 6){
+      if(guess.toLowerCase() === "e.t."){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    else if(randVar === 7){
+      if(guess.toLowerCase() === "back to the future ii"){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    else if(randVar === 8){
+      if(guess.toLowerCase() === "the matrix"){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    else if(randVar === 9){
+      if(guess.toLowerCase() === "jurassic park"){
+        alert("Correct guess! You win!");
+        setGuess("");
+        setRandVar(Math.floor(Math.random() * 10))
+      }
+      else{
+        alert("Incorrect guess! Try again!");
+      }
+    }
+    
   };
 
   return (
     <>
+      <title>Emoji Mover Guesser</title>
       <div>
-        <h1>Em😅jiGuess</h1>
+        <h1>Em😅ji Guess</h1>
         <h2>Welcome to emoji guesser! Here's how to play:</h2>
         <p>You will get five emojis in the box below.
         The five emojis represent one well-known movie.
@@ -72,9 +164,9 @@ function App() {
         <div class="emojis">{getRandomEmojis()}</div>
       </div>
       <div width="3vw" margin="auto">
-        <input class="input" onChange={(Event) => {setGuess(Event.target.value)}} placeholder="Please enter guess"></input>
+        <input class="input" value={guess} onChange={(Event) => {setGuess(Event.target.value)}} placeholder="Please enter guess"></input>
         <button class="button" onClick={() => checkGuess()}>Submit</button>
-        <button class="button" onClick={() => setRandVar(Math.floor(Math.random() * 10))}>Get another movie!</button>
+        <button class="button" onClick={() => setRandVar(Math.floor(Math.random() * 10))}>Try Another!</button>
       </div>
     </>
   );
